@@ -1,0 +1,52 @@
+:host::ng-deep{
+
+ .p-panel-header {
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  font-size: larger;
+  color: #4b489a;
+
+}
+.p-panel-content{
+  font-size: medium;
+}
+.p-panel .p-panel-header{
+    border: 1px solid #e5e7eb;
+    padding: 1.25rem;
+    background: #f9fafb;
+    color: #374151;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    width: -webkit-fill-available;
+}
+}
+.card {
+    background: var(--surface-card);
+    padding-top: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+:host ::ng-deep{
+  .p-sidebar-left {
+    top: 3rem;
+    left: 0;
+    height: 73%;
+    box-shadow: 3px 3px #e2d9d9;
+}
+p-multiselect.p-element.p-inputwrapper{
+  width: 100%;
+  display: inline-grid;  
+}
+.p-sidebar .p-sidebar-header + .p-sidebar-content {
+  padding-top: 0;
+  padding-left: 1rem;
+}
+.p-sidebar-header{
+  border-bottom: 2px solid #c1b6b6;
+}
+}
+    
