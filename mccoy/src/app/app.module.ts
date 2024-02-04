@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SidebarModule } from 'primeng/sidebar';
 import { DetailsPageComponent } from './details-page/details-page.component';
-
+import { GalleriaModule } from 'primeng/galleria';
+import { FieldsetModule } from 'primeng/fieldset';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,9 @@ import { DetailsPageComponent } from './details-page/details-page.component';
     ButtonModule,
     FormsModule,
     MultiSelectModule,
-    SidebarModule
+    SidebarModule,
+    GalleriaModule,
+    FieldsetModule
   ],
   providers: [],
   bootstrap: [AppComponent]

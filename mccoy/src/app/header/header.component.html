@@ -1,9 +1,9 @@
 
-    <div class="inline-flex" style="width: 100%;height: 4rem;">
+    <div class="inline-flex" style="width: 100%;height: 4rem;border-bottom: 1px solid #d1d1ca;">
         <div (click)="showSideBar()" class="block md:hidden font-bold align-items-center justify-content-center p-4 border-round mr-3">
             <i class="pi pi-align-justify" ></i>
         </div>
-        <div> <img style="height: 4rem;" src="https://mccoyindia.in/wp-content/uploads/2021/08/New-c-logo.jpg" alt=""> </div>
+        <div> <img style="height: 3.8rem;" src="https://mccoyindia.in/wp-content/uploads/2021/08/New-c-logo.jpg" alt=""> </div>
         <div class="hidden md:flex  align-items-center justify-content-center pl-5">
             <div class="card flex justify-content-center">
                 <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select categories"></p-multiSelect>
@@ -18,4 +18,5 @@
     </p-sidebar>
     <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button> -->
     
+    <app-main-page></app-main-page>
     

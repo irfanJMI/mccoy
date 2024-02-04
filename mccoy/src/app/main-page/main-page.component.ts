@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../product-service.service';
+import { Router } from '@angular/router';
+import { ProductItemService } from '../../service/product.service';
 
 @Component({
   selector: 'app-main-page',
@@ -8,10 +10,18 @@ import { ProductService } from '../product-service.service';
 })
 export class MainPageComponent {
   products!: Product[];
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService,private router:Router,private productItemService:ProductItemService) {}
   ngOnInit() {
+    
     this.productService.getProducts().then((data) => (this.products = data.slice(0, 20)));
 }
+  showDetails(item:any){
+    console.log(item)
+    this.productItemService.setItem(item)
+    this.router.navigate(['/detail'])
+
+}
+
 }
 export interface Product {
   id?: string;
