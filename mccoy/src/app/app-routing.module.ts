@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { HeaderComponent } from './header/header.component';
+import {ScrollComponent} from './scroll/scroll.component'
 
 const routes: Routes = [
   {
@@ -9,6 +10,9 @@ const routes: Routes = [
   },
   {
     path:'detail',component:DetailsPageComponent
+  },
+  {
+    path:'scroll',component:ScrollComponent
   }
 ]
 ;

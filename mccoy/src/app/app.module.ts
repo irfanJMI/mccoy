@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
   import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,12 +14,19 @@ import { SidebarModule } from 'primeng/sidebar';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { GalleriaModule } from 'primeng/galleria';
 import { FieldsetModule } from 'primeng/fieldset';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './+state/app.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ScrollComponent } from './scroll/scroll.component';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainPageComponent,
-    DetailsPageComponent
+    DetailsPageComponent,
+    ScrollComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,12 @@ import { FieldsetModule } from 'primeng/fieldset';
     MultiSelectModule,
     SidebarModule,
     GalleriaModule,
-    FieldsetModule
+    FieldsetModule,
+    NgxPageScrollModule,
+    StoreModule.forRoot({
+      electronicStore: reducer
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]

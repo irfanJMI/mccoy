@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Categories } from '../../assets/data';
 
 @Component({
   selector: 'app-header',
@@ -12,15 +13,9 @@ export class HeaderComponent implements OnInit{
     selectedCities = []
     sidebarVisible =false
   position: string = 'top';
-    cities: { name: string; code: string; }[] = [];
+    categories: any;
   ngOnInit() {
-    this.cities = [
-        {name: 'Fan', code: 'FAN'},
-        {name: 'Cooler', code: 'COOLER'},
-        {name: 'Lights', code: 'LIGHTS'},
-        {name: 'Washing Machine', code: 'WASHING'},
-        {name: 'TV', code: 'TV'}
-    ];
+    this.categories = Categories
 }
 showSideBar(){
     this.sidebarVisible = true

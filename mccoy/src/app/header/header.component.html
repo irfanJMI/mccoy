@@ -6,14 +6,29 @@
         <div> <img style="height: 3.8rem;" src="https://mccoyindia.in/wp-content/uploads/2021/08/New-c-logo.jpg" alt=""> </div>
         <div class="hidden md:flex  align-items-center justify-content-center pl-5">
             <div class="card flex justify-content-center">
-                <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select categories"></p-multiSelect>
+                <p-multiSelect [options]="categories"  [(ngModel)]="selectedCities"  placeholder="Select categories" display="chip" [showClear]="true" [group]="true">
+                    <ng-template let-group pTemplate="group">
+                        <div class="flex align-items-center">
+                            <!-- <img src="" [class]="'mr-2 flag flag-' + group.value" style="width: 20px" /> -->
+                            <span>{{ group.label }}</span>
+                        </div>
+                    </ng-template>
+                </p-multiSelect>
             </div>
         </div>
     </div>
     <p-sidebar [(visible)]="sidebarVisible" >
         <ng-template pTemplate="header">Mccoy Store</ng-template>
         <div class="card flex justify-content-center">
-            <p-multiSelect  [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select Categories" filterPlaceHolder="search categori"></p-multiSelect>
+            <p-multiSelect  [options]="categories" [(ngModel)]="selectedCities"  placeholder="Select Categories" filterPlaceHolder="search categori" display="chip" [showClear]="true" [group]="true">
+                <ng-template let-group pTemplate="group">
+                    <div class="flex align-items-center">
+                        <!-- <img src="" [class]="'mr-2 flag flag-' + group.value" style="width: 20px" /> -->
+                        <span>{{ group.label }}</span>
+                    </div>
+                </ng-template>
+            </p-multiSelect>
+            
         </div>
     </p-sidebar>
     <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button> -->

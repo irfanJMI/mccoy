@@ -1,5 +1,17 @@
 :host::ng-deep{
-
+.p-multiselect{
+  max-width: 20rem !important;
+  width: 20rem !important;
+}
+.p-multiselect-label .p-placeholder{
+  padding: 0.75rem 0.75rem !important;
+}
+.p-multiselect .p-multiselect-label{
+  padding: 0.5rem 0.5rem !important;
+}
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item-group{
+  background-color: #c9c9c9;
+}
  .p-panel-header {
   display: flex;
   align-items: center;
