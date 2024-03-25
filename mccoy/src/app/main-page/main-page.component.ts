@@ -23,9 +23,9 @@ export class MainPageComponent {
   }
   showDetails(item: any) {
     console.log(item);
-    // this.productItemService.setItem(item);
-    // this.store.dispatch(new actions.FilterDataAction(item))
-    // this.router.navigate(['/detail']);
+    this.productItemService.setItem(item);
+    this.store.dispatch(new actions.FilterDataAction(item))
+    this.router.navigate(['/detail']);
   }
 }
 export interface Product {

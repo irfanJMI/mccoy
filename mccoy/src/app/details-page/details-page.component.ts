@@ -12,24 +12,7 @@ import { Product } from '../main-page/main-page.component';
 export class DetailsPageComponent {
   sub: any;
   item :Product = { }
-  images = [
-    {
-      itemImageSrc:
-        'https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg',
-      thumbnailImageSrc:
-        'https://primefaces.org/cdn/primeng/images/galleria/galleria1s.jpg',
-      alt: 'Description for Image 1',
-      title: 'Title 1',
-    },
-    {
-      itemImageSrc:
-        'https://primefaces.org/cdn/primeng/images/galleria/galleria2.jpg',
-      thumbnailImageSrc:
-        'https://primefaces.org/cdn/primeng/images/galleria/galleria2s.jpg',
-      alt: 'Description for Image 2',
-      title: 'Title 2',
-    },
-  ];
+  images :any = []
 
   responsiveOptions: any[] | undefined;
   constructor(private productItemService: ProductItemService,
@@ -39,6 +22,7 @@ export class DetailsPageComponent {
       res=>{
         console.log(res)
         this.item = res?.data
+        this.images = this.item?.image
       }
     )
     this.sub = this.productItemService.getitem().subscribe((item) => {
