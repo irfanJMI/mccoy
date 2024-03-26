@@ -3,7 +3,9 @@
         <div (click)="showSideBar()" class="block md:hidden font-bold align-items-center justify-content-center p-4 border-round mr-3">
             <i class="pi pi-align-justify" ></i>
         </div>
-        <div> <img style="height: 3.8rem;" src="https://mccoyindia.in/wp-content/uploads/2021/08/New-c-logo.jpg" alt=""> </div>
+        <div class="">
+            <img style="height: 3.8rem;" src="./../assets/img/logo.jpg" alt=""> 
+        </div>
         <div class="hidden md:flex  align-items-center justify-content-center pl-5">
             <div class="card flex justify-content-center">
                 <p-multiSelect [options]="categories"  [(ngModel)]="selectedCities"  placeholder="Select categories" display="chip" [showClear]="true" [group]="true">

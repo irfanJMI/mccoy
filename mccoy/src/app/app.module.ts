@@ -19,6 +19,7 @@ import { reducer } from './+state/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ScrollComponent } from './scroll/scroll.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

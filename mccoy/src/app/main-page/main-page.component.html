@@ -2,22 +2,22 @@
     <p-dataView #dv [value]="products" layout="list">
         <ng-template pTemplate="list" let-products>
             <div class="grid grid-nogutter">
-                <div class="col-6 sm:col-6 lg:col-6 xl:col-6 p-2" *ngFor="let item of products; let first = first; let i=index;">
-                    <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4  shadow-3" [ngClass]="{ 'surface-border': !first }">
-                        <img class="w-12 sm:w-25rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" [src]="item?.image[0]" [alt]="item.name" />
-                        <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+                <div class="col-12 sm:col-4 lg:col-3 xl:col-6 p-2" *ngFor="let item of products; let first = first; let i=index;">
+                    <div (click)="showDetails(item)" style="height: 100%;"  class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4  shadow-3" [ngClass]="{ 'surface-border': !first }">
+                        <img style="aspect-ratio: 3/3;" class="w-12 sm:w-12rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" [src]="item?.image[0]" [alt]="item.name" />
+                        <div class="flex flex-column sm:flex-row  align-items-center xl:align-items-start flex-1 gap-4">
                             <div class="flex flex-column align-items-center sm:align-items-start gap-3">
-                                <div (click)="showDetails(item)" class=" font-bold text-900">{{ item.name }}</div>
-                                <div class="flex align-items-center gap-3">
+                                <div  class="text-900">{{ item.name }}</div>
+                                <!-- <div class="flex align-items-center gap-3">
                                     <span class="flex align-items-center gap-2">
                                         <i class="pi pi-tag"></i>
                                         <span class="font-semibold">{{ item.category }}</span>
                                     </span>
-                                </div>
+                                </div> -->
                             </div>
-                            <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-                                <span class="text-2l font-semibold mrp">{{ '&#8377;' + item.mrp }}</span>
-                                <span class="text-2l font-semibold offer">{{ '&#8377;' + item.offer_price }}</span>
+                            <div class="flex flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+                                <span class="text-2l font-semibold mrp">{{ item.mrp| currency:'INR':'symbol' }}</span>
+                                <span class="text-2l font-semibold offer">{{ item.offer_price| currency:'INR':'symbol' }}</span>
                                 <!-- <button pButton icon="pi pi-shopping-cart" class="md:align-self-end mb-2 p-button-rounded" [disabled]="item.inventoryStatus === 'OUTOFSTOCK'"></button> -->
                             </div>
                         </div>

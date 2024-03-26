@@ -44,10 +44,11 @@
 }
 :host ::ng-deep{
   .p-sidebar-left {
-    top: 3rem;
+    top: 1rem;
     left: 0;
-    height: 73%;
+    height: 80%;
     box-shadow: 3px 3px #e2d9d9;
+    width: 90%;
 }
 p-multiselect.p-element.p-inputwrapper{
   width: 100%;
@@ -60,5 +61,13 @@ p-multiselect.p-element.p-inputwrapper{
 .p-sidebar-header{
   border-bottom: 2px solid #c1b6b6;
 }
+}
+.background-logo{
+  // background: url("../../assets/img/logo.jpg");
+  height: 100%;
+    height: 3.2rem;
+    aspect-ratio: 5 / 1;
+    background-repeat: round;
+    mix-blend-mode: darken;
 }
     
